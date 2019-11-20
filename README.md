@@ -27,7 +27,7 @@ pod 'RxTexture'
 
 ```console
 $ make project
-$ xed .
+$ open RxTexture.xcworkspace
 ```
 
 ## Author
