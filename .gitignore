@@ -1,0 +1,12 @@
+.DS_Store
+/.build
+/.swiftpm
+/Packages
+/*.xcodeproj
+/*.xcworkspace
+**/xcuserdata
+**/xcshareddata
+Pods/
+Carthage/
+
+Examples/**/Podfile.lock
