@@ -10,6 +10,7 @@ jobs:
   test:
     runs-on: macOS-latest
     env:
+      DEVELOPER_DIR: /Applications/Xcode_11.app/Contents/Developer
       WORKSPACE: RxTexture.xcworkspace
       SCHEME: RxTexture-Package
       SDK: iphonesimulator13.1
