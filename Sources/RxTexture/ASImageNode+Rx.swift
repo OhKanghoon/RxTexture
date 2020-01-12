@@ -9,8 +9,8 @@ import AsyncDisplayKit
 import RxCocoa
 import RxSwift
 
-extension Reactive where Base: ASImageNode {
-  public var image: Binder<UIImage?> {
+public extension Reactive where Base: ASImageNode {
+  var image: Binder<UIImage?> {
     return Binder(self.base, scheduler: CurrentThreadScheduler.instance) { node, image in
       node.image = image
     }
