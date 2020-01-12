@@ -8,7 +8,6 @@
 import XCTest
 
 import AsyncDisplayKit
-import RxExpect
 import RxSwift
 import RxTexture
 
