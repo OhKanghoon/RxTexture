@@ -114,29 +114,29 @@ final class ASDisplayNodeTests: XCTestCase {
   }
 
   func testBackgroundColor() {
-      let node = ASDisplayNode()
-      let color: UIColor = .red
+    let node = ASDisplayNode()
+    let color: UIColor = .red
 
-      Observable.just(color).subscribe(node.rx.backgroundColor).dispose()
+    Observable.just(color).subscribe(node.rx.backgroundColor).dispose()
 
-      XCTAssertEqual(node.backgroundColor, color)
+    XCTAssertEqual(node.backgroundColor, color)
   }
 
   func testBackgroundColor_optionalSome() {
-      let node = ASDisplayNode()
-      let color: UIColor? = .red
+    let node = ASDisplayNode()
+    let color: UIColor? = .red
 
-      Observable.just(color).subscribe(node.rx.backgroundColor).dispose()
+    Observable.just(color).subscribe(node.rx.backgroundColor).dispose()
 
-      XCTAssertEqual(node.backgroundColor, color)
+    XCTAssertEqual(node.backgroundColor, color)
   }
 
   func testBackgroundColor_optionalNil() {
-      let node = ASDisplayNode()
-      let color: UIColor? = nil
+    let node = ASDisplayNode()
+    let color: UIColor? = nil
 
-      Observable.just(color).subscribe(node.rx.backgroundColor).dispose()
+    Observable.just(color).subscribe(node.rx.backgroundColor).dispose()
 
-      XCTAssertEqual(node.backgroundColor, color)
+    XCTAssertEqual(node.backgroundColor, color)
   }
 }
