@@ -10,7 +10,6 @@ import RxCocoa
 import RxSwift
 
 public extension Reactive where Base: ASButtonNode {
-
   /// Reactive wrapper for `setAttributedTitle(_:for:)`
   func attributedTitle(for controlState: UIControl.State = []) -> Binder<NSAttributedString?> {
     return Binder(self.base, scheduler: CurrentThreadScheduler.instance) { node, attributedTitle in
