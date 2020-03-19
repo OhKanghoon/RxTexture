@@ -2,6 +2,7 @@
 
 ![Swift](https://img.shields.io/badge/Swift-5.1-orange.svg)
 [![Build Status](https://github.com/OhKanghoon/RxTexture/workflows/CI/badge.svg)](https://github.com/OhKanghoon/RxTexture/actions)
+[![codecov](https://codecov.io/gh/OhKanghoon/RxTexture/branch/master/graph/badge.svg)](https://codecov.io/gh/OhKanghoon/RxTexture)
 [![Version](https://img.shields.io/cocoapods/v/RxTexture2.svg?style=flat)](https://cocoapods.org/pods/RxTexture2)
 [![License](https://img.shields.io/cocoapods/l/RxTexture2.svg?style=flat)](https://cocoapods.org/pods/RxTexture2)
 [![Platform](https://img.shields.io/cocoapods/p/RxTexture2.svg?style=flat)](https://cocoapods.org/pods/RxTexture2)
