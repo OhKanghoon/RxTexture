@@ -2,9 +2,9 @@
 
 ![Swift](https://img.shields.io/badge/Swift-5.1-orange.svg)
 [![Build Status](https://github.com/OhKanghoon/RxTexture/workflows/CI/badge.svg)](https://github.com/OhKanghoon/RxTexture/actions)
-[![Version](https://img.shields.io/cocoapods/v/RxTexture.svg?style=flat)](https://cocoapods.org/pods/RxTexture)
-[![License](https://img.shields.io/cocoapods/l/RxTexture.svg?style=flat)](https://cocoapods.org/pods/RxTexture)
-[![Platform](https://img.shields.io/cocoapods/p/RxTexture.svg?style=flat)](https://cocoapods.org/pods/RxTexture)
+[![Version](https://img.shields.io/cocoapods/v/RxTexture2.svg?style=flat)](https://cocoapods.org/pods/RxTexture2)
+[![License](https://img.shields.io/cocoapods/l/RxTexture2.svg?style=flat)](https://cocoapods.org/pods/RxTexture2)
+[![Platform](https://img.shields.io/cocoapods/p/RxTexture2.svg?style=flat)](https://cocoapods.org/pods/RxTexture2)
 
 ## Example
 
@@ -21,7 +21,7 @@ RxTexture is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'RxTexture'
+pod 'RxTexture2'
 ```
 
 ## Development

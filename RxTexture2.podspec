@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'RxTexture'
-  s.version          = '0.1.0'
+  s.name             = 'RxTexture2'
+  s.version          = '1.0.0'
   s.summary          = 'RxSwift Texture Extensions'
   s.description      = <<-DESC
 RxSwift Texture Extensions
@@ -21,7 +21,7 @@ RxSwift Texture Extensions
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'RxTexture/Classes/**/*'
+  s.source_files = 'Sources/**/*.{swift,h,m}'
   
   s.dependency 'RxSwift', '~> 5'
   s.dependency 'RxCocoa', '~> 5'
