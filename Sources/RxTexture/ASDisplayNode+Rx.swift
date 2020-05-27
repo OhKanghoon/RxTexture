@@ -68,3 +68,11 @@ public extension Reactive where Base: ASDisplayNode {
     }
   }
 }
+
+public extension Reactive where Base: ASDisplayNode {
+  var setNeedsLayout: Binder<Void> {
+    return Binder(self.base, scheduler: CurrentThreadScheduler.instance) { node, _ in
+      node.setNeedsLayout()
+    }
+  }
+}
