@@ -139,4 +139,21 @@ final class ASDisplayNodeTests: XCTestCase {
 
     XCTAssertEqual(node.backgroundColor, color)
   }
+
+  func testSetNeedsLayout() {
+    class TestNode: ASDisplayNode {
+      var didSetNeedsLayout: Bool = false
+
+      override func setNeedsLayout() {
+        self.didSetNeedsLayout = true
+      }
+    }
+
+    let node = TestNode()
+    XCTAssertEqual(node.didSetNeedsLayout, false)
+
+    Observable.just(()).subscribe(node.rx.setNeedsLayout).dispose()
+
+    XCTAssertEqual(node.didSetNeedsLayout, true)
+  }
 }
