@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxTexture2'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'RxSwift Texture Extensions'
   s.description      = <<-DESC
 RxSwift Texture Extensions
