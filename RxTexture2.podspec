@@ -22,10 +22,10 @@ RxSwift Texture Extensions
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'Sources/**/*.{swift,h,m}'
-  
+
   s.dependency 'RxSwift', '~> 5'
   s.dependency 'RxCocoa', '~> 5'
-  s.dependency 'Texture', '~> 2.8'
+  s.dependency 'Texture', '~> 3.0'
 
   s.swift_version = '5.0'
 end
