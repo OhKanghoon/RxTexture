@@ -8,81 +8,114 @@
 import XCTest
 
 import AsyncDisplayKit
-import RxExpect
 import RxSwift
+import RxTest
 import RxTexture
 
 final class ASDisplayNodeTests: XCTestCase {
   func testDidEnterVisibleState() {
-    let test = RxExpect()
+    let scheduler = TestScheduler(initialClock: 0)
     let node = ASDisplayNode()
     _ = node.view
-    test.scheduler.scheduleAt(100) { node.didEnterVisibleState() }
-    test.assert(node.rx.didEnterVisibleState) { events in
-      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
+
+    scheduler.scheduleAt(100) { node.didEnterVisibleState() }
+
+    let response = scheduler.start(created: 0, subscribed: 0, disposed: 100) {
+      node.rx.didEnterVisibleState
     }
+
+    XCTAssertEqual(response.events.filter { (0..<100).contains($0.time) }.count, 0)
+    XCTAssertEqual(response.events.filter { (100...).contains($0.time) }.count, 1)
   }
 
   func testDidExitVisibleState() {
-    let test = RxExpect()
+    let scheduler = TestScheduler(initialClock: 0)
     let node = ASDisplayNode()
     _ = node.view
-    test.scheduler.scheduleAt(100) { node.didExitVisibleState() }
-    test.assert(node.rx.didExitVisibleState) { events in
-      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
+
+    scheduler.scheduleAt(100) { node.didExitVisibleState() }
+
+    let response = scheduler.start(created: 0, subscribed: 0, disposed: 100) {
+      node.rx.didExitVisibleState
     }
+
+    XCTAssertEqual(response.events.filter { (0..<100).contains($0.time) }.count, 0)
+    XCTAssertEqual(response.events.filter { (100...).contains($0.time) }.count, 1)
   }
 
   func testDidEnterDisplayState() {
-    let test = RxExpect()
+    let scheduler = TestScheduler(initialClock: 0)
     let node = ASDisplayNode()
-    test.scheduler.scheduleAt(100) { node.didEnterDisplayState() }
-    test.assert(node.rx.didEnterDisplayState) { events in
-      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
+    _ = node.view
+
+    scheduler.scheduleAt(100) { node.didEnterDisplayState() }
+
+    let response = scheduler.start(created: 0, subscribed: 0, disposed: 100) {
+      node.rx.didEnterDisplayState
     }
+
+    XCTAssertEqual(response.events.filter { (0..<100).contains($0.time) }.count, 0)
+    XCTAssertEqual(response.events.filter { (100...).contains($0.time) }.count, 1)
   }
 
   func testDidExitDisplayState() {
-    let test = RxExpect()
+    let scheduler = TestScheduler(initialClock: 0)
     let node = ASDisplayNode()
-    test.scheduler.scheduleAt(100) { node.didExitDisplayState() }
-    test.assert(node.rx.didExitDisplayState) { events in
-      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
+    _ = node.view
+
+    scheduler.scheduleAt(100) { node.didExitDisplayState() }
+
+    let response = scheduler.start(created: 0, subscribed: 0, disposed: 100) {
+      node.rx.didExitDisplayState
     }
+
+    XCTAssertEqual(response.events.filter { (0..<100).contains($0.time) }.count, 0)
+    XCTAssertEqual(response.events.filter { (100...).contains($0.time) }.count, 1)
   }
 
   func testDidEnterPreloadState() {
-    let test = RxExpect()
+    let scheduler = TestScheduler(initialClock: 0)
     let node = ASDisplayNode()
-    test.scheduler.scheduleAt(100) { node.didEnterPreloadState() }
-    test.assert(node.rx.didEnterPreloadState) { events in
-      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
+    _ = node.view
+
+    scheduler.scheduleAt(100) { node.didEnterPreloadState() }
+
+    let response = scheduler.start(created: 0, subscribed: 0, disposed: 100) {
+      node.rx.didEnterPreloadState
     }
+
+    XCTAssertEqual(response.events.filter { (0..<100).contains($0.time) }.count, 0)
+    XCTAssertEqual(response.events.filter { (100...).contains($0.time) }.count, 1)
   }
 
   func testDidExitPreloadState() {
-    let test = RxExpect()
+    let scheduler = TestScheduler(initialClock: 0)
     let node = ASDisplayNode()
-    test.scheduler.scheduleAt(100) { node.didExitPreloadState() }
-    test.assert(node.rx.didExitPreloadState) { events in
-      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
+    _ = node.view
+
+    scheduler.scheduleAt(100) { node.didExitPreloadState() }
+
+    let response = scheduler.start(created: 0, subscribed: 0, disposed: 100) {
+      node.rx.didExitPreloadState
     }
+
+    XCTAssertEqual(response.events.filter { (0..<100).contains($0.time) }.count, 0)
+    XCTAssertEqual(response.events.filter { (100...).contains($0.time) }.count, 1)
   }
 
   func testDidLoad() {
-    let test = RxExpect()
+    let scheduler = TestScheduler(initialClock: 0)
     let node = ASDisplayNode()
-    test.scheduler.scheduleAt(100) { node.didLoad() }
-    test.assert(node.rx.didLoad) { events in
-      XCTAssertEqual(events.in(..<100).filter(.next).count, 0)
-      XCTAssertEqual(events.in(100...).filter(.next).count, 1)
+    _ = node.view
+
+    scheduler.scheduleAt(100) { node.didLoad() }
+
+    let response = scheduler.start(created: 0, subscribed: 0, disposed: 100) {
+      node.rx.didLoad
     }
+
+    XCTAssertEqual(response.events.filter { (0..<100).contains($0.time) }.count, 0)
+    XCTAssertEqual(response.events.filter { (100...).contains($0.time) }.count, 1)
   }
 
   func testHidden_True() {
