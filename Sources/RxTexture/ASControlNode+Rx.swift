@@ -55,7 +55,7 @@ public extension Reactive where Base: ASControlNode {
 
       return Disposables.create(with: controlTarget.dispose)
     }
-    .takeUntil(deallocated)
+    .take(until: self.deallocated)
 
     return ControlEvent(events: source)
   }
@@ -86,7 +86,7 @@ public extension Reactive where Base: ASControlNode {
 
       return Disposables.create(with: controlTarget.dispose)
     }
-    .takeUntil(deallocated)
+    .take(until: self.deallocated)
 
     let bindingObserver = Binder(base, binding: setter)
 
